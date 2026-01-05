@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bus Indonesia - Pesan Tiket</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --kuning:#f5c518; --hitam:#111; }
+    body { background:#e2e2e2; font-family:"Inter",sans-serif; color:var(--hitam); }
+    .btn-menu { position:fixed; top:16px; left:16px; z-index:1040; background:var(--kuning); color:var(--hitam); font-weight:700; }
+    .offcanvas { background:var(--hitam); color:var(--kuning); }
+    .offcanvas .nav-link { color:var(--kuning); font-weight:600; }
+    .offcanvas .nav-link:hover { background:var(--kuning); color:var(--hitam); }
+    .form-card { border:2px solid var(--kuning); background:var(--hitam); color:var(--kuning); border-radius:12px; }
+    footer { margin-top:40px; background:var(--hitam); color:var(--kuning); padding:20px; text-align:center; }
+    label { font-weight:600; }
+  </style>
+</head>
+<body>
+<!-- Tombol menu -->
+<button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">☰ Menu</button>
+
+<!-- Sidebar navigasi -->
+<div class="offcanvas offcanvas-start" id="sidebarMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Navigasi</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav flex-column">
+      <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+      <li class="nav-item"><a class="nav-link" href="gallery.html">Galeri</a></li>
+      <li class="nav-item"><a class="nav-link active" href="ticket.html">Pesan Tiket</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Konten utama -->
+<main class="container mt-5">
+  <h2 class="text-center" style="font-family:'Poppins',sans-serif; font-weight:800; color:#000000;">
+    Formulir Pemesanan Tiket
+  </h2>
+  <div class="card form-card mt-3">
+    <div class="card-body">
+      <form id="ticketForm" class="row g-3 flex-column">
+        <div class="col-12"><label>Nama Lengkap</label><input type="text" class="form-control" required></div>
+        <div class="col-12"><label>Kewarganegaraan</label>
+          <select class="form-select" required>
+            <option value="">-- Pilih Negara --</option>
+            <option>Indonesia</option><option>Malaysia</option><option>Singapura</option>
+            <option>Brunei Darussalam</option><option>Thailand</option><option>Vietnam</option>
+            <option>Filipina</option><option>Myanmar</option><option>Laos</option><option>Kamboja</option>
+            <option>Timor Leste</option><option>Amerika Serikat</option><option>Inggris</option>
+            <option>Jerman</option><option>Prancis</option><option>Australia</option><option>Jepang</option>
+            <option>Korea Selatan</option><option>China</option><option>India</option>
+            <!-- tambahkan full list negara dunia -->
+          </select>
+        </div>
+        <div class="col-12"><label>Tanggal Lahir</label><input type="date" class="form-control" required></div>
+        <div class="col-12"><label>Alamat</label><input type="text" class="form-control" required></div>
+        <div class="col-12"><label>No Telepon</label><input type="tel" class="form-control" required></div>
+        <div class="col-12"><label>Email</label><input type="email" class="form-control" required></div>
+        <div class="col-12"><label>Lokasi Awal</label>
+          <select class="form-select" required>
+            <option>Terminal Bungurasih (Surabaya)</option>
+            <option>Terminal Giwangan (Yogyakarta)</option>
+            <option>Terminal Tirtonadi (Solo)</option>
+            <option>Terminal Leuwi Panjang (Bandung)</option>
+            <option>Terminal Kampung Rambutan (Jakarta)</option>
+            <option>Terminal Kalideres (Jakarta)</option>
+            <option>Terminal Pulo Gadung (Jakarta)</option>
+            <option>Terminal Rajabasa (Lampung)</option>
+            <option>Terminal Amplas (Medan)</option>
+            <option>Terminal Pinang Baris (Medan)</option>
+            <!-- tambahkan daftar lengkap terminal -->
+          </select>
+        </div>
+        <div class="col-12"><label>Lokasi Tujuan</label>
+          <select class="form-select" required>
+            <option>Terminal Bungurasih (Surabaya)</option>
+            <option>Terminal Giwangan (Yogyakarta)</option>
+            <option>Terminal Tirtonadi (Solo)</option>
+            <option>Terminal Leuwi Panjang (Bandung)</option>
+            <option>Terminal Kampung Rambutan (Jakarta)</option>
+            <option>Terminal Kalideres (Jakarta)</option>
+            <option>Terminal Pulo Gadung (Jakarta)</option>
+            <option>Terminal Rajabasa (Lampung)</option>
+            <option>Terminal Amplas (Medan)</option>
+            <option>Terminal Pinang Baris (Medan)</option>
+          </select>
+        </div>
+        <div class="col-12"><label>Jadwal Keberangkatan</label><input type="date" class="form-control" required></div>
+        <div class="col-12"><label>Jumlah Tiket</label><input type="number" class="form-control" required></div>
+        <div class="col-12"><label>PO Bus</label>
+          <select class="form-select" required>
+            <option>Sinar Jaya</option><option>Rosalia Indah</option><option>Gunung Harta</option>
+            <option>Harapan Jaya</option><option>Efisiensi</option><option>Budiman</option>
+            <option>Lorena</option><option>Haryanto</option><option>ANS</option><option>NPM</option>
+            <option>DAMRI</option><option>Pahala Kencana</option><option>Sudiro Tungga Jaya</option>
+            <option>Bejeu</option><option>Primajasa</option><option>Gumarang Jaya</option>
+            <option>Putra Pelangi</option><option>PMTOH</option><option>Merdeka</option><option>SAN</option>
+          </select>
+        </div>
+        <div class="col-12"><label>Kelas</label>
+          <select class="form-select" required>
+            <option>Ekonomi AC</option>
+            <option>Eksekutif</option>
+            <option>Suites Class</option>
+          </select>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-warning text-dark fw-bold">Kirim Permohonan</button>
+        </div>
+      </form>
+      <div id="note" class="mt-3 text-center" style="display:none;">
+        <p>Pesanan anda sedang diproses, tunggu email resmi dari kami untuk melanjutkan pesanan secara mendalam.</p>
+        <a href="ticket.html" class="btn btn-light">Kembali ke Dashboard Tiket</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Bus Indonesia</p>
+  <p>CopyRight: Muhammad Faqih Sawaludin Santoso - 251011700256 - 01SIFP004</p>
+</footer>
+
+
+<!-- Bootstrap JS wajib agar menu navigasi bisa diklik -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2">
+</script>
